@@ -15,14 +15,5 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-/config/environments/*
-/config/database.yml
-/config/puma.rb
-/config/puma.rb.origin
-/config/secrets.yml
-/config/spring.rb
-/public/assets/*
-/public/system/*
-/test/*
 .Gemfile.lock
 .DS_Store
