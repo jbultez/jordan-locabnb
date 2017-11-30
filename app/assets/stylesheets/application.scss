@@ -1,2 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@mixin avatar($size) {
+    width: $size;
+    height: $size;
+    margin-top: $size*0.04;
+    margin-bottom: $size*0.04;
+    background-color: #f2b8eb;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+
+    .initials {
+      position: relative;
+      top: $size*0.25;
+      font-size: $size*0.5;
+      line-height: $size*0.5;
+      color: #fff;
+      font-family: "Courier New", monospace;
+      font-weight: bold;
+    }
+}
+
+.avatar-circle      { @include avatar(47px); }
+.avatar-circle-sm   { @include avatar(28px); }
+.avatar-circle-lg   { @include avatar(250px); }
