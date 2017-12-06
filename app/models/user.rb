@@ -6,7 +6,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, :default_url => "/assets/default_image.jpg"
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  validates_attachment :avatar,
+    content_type: { content_type: ["image/jpeg", "image/png","image/jpg"] }
+  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 7.megabytes
   validates :lastname, presence: true, length: {maximum: 25}
   validates :firstname, presence: true, length: {maximum: 25}
 end
