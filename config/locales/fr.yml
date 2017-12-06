@@ -1,0 +1,14 @@
+---
+fr:
+  activerecord:
+    attributes:
+      room:
+        price: Le prix
+        address: L'adresse
+        summary: La description
+        listing_name: Le nom de l'annonce
+        bath_room: Le nombre de salles de bain
+        bed_room: Le nombre de chambres
+        room_type: Le type de logement
+        home_type: Le type d'habitation
+        accomodate: Nombre de personnes
