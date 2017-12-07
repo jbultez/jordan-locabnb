@@ -7,4 +7,9 @@ module ApplicationHelper
       'default_image.png'
     end
   end
+
+  def fullname(room)
+    return "#{@room.user.lastname.capitalize!} #{@room.user.firstname.capitalize!}"
+  end
+
 end
