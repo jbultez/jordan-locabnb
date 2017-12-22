@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :users, only: [:show]
   resources :rooms do
-    resources :reservation, only: [:create]
+    resources :reservations, only: [:create]
   end
   resources :photos
 end
