@@ -13,7 +13,7 @@
         <span class="pull-right">
           <%= link_to "Supprimer mon commentaire", [@room, r], method: :delete, data: {confirm: "Etes-vous sûr de vouloir supprimer votre commentaire ?"} if current_user && current_user == r.user%>
         </span>
-        <strong><%= r.user.lastname %> <%= r.user.firstname%> <%= r.star %></strong>
+        <strong><%= r.user.lastname %> <%= r.user.firstname%> <div id="stars_<%= r.id %>"></div></strong>
         <br>
         <%= r.created_at.strftime("%d.%m.%y") %>
       </div>
@@ -23,5 +23,12 @@
     </div>
   </div>
     <hr>
+    <script type="text/javascript">
+      $('#stars_<%= r.id %>').raty({
+        path: '/assets',
+        readOnly: true,
+        score: <%= r.star %>
+      })
+    </script>
   <%end%>
 <%end%>

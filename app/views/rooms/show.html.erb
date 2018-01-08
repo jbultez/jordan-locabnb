@@ -135,7 +135,8 @@
       <!-- Reviews -->
       <div class="row">
         <div class="col-md-12">
-          <h3>Avis <%= @room.average_rating%> (<%= @reviews.count %>)</h3>
+          <h3>Avis <span id="average_rating"></span> ( <%= @reviews.count %> avis )</h3>
+          <br>
           <div class="container">
             <div class="">
               <%= render 'reviews/form' if @booked && !@hasReview %>
@@ -192,3 +193,11 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @room.average_rating %>
+  })
+</script>
