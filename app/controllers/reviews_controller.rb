@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     room = @review.room
     @review.destroy
-    redirect_to room_path
+    redirect_to room
   end
 
   private

@@ -20,7 +20,7 @@
           </div>
           <div class="col-md-9">
             <h4 class="text-center"><%= @room.listing_name %></h4>
-            <p class="text-center"><%= @room.address %></p>
+            <a href="#map", class="sidebar-link"><%= @room.address %></a> <a href="#average_rating", class="sidebar-link"><span id="average_rating_header"></span> <%= @reviews.count%></a>
             <div class="row text-center row-space-1">
               <div class="col-sm-3">
                 <i class="fa fa-home fa-2x"></i>
@@ -135,7 +135,7 @@
       <!-- Reviews -->
       <div class="row">
         <div class="col-md-12">
-          <h3>Avis <span id="average_rating"></span> ( <%= @reviews.count %> avis )</h3>
+          <h3><%= pluralize(@reviews.count, "Commentaire")%> <span id="average_rating"></span></h3>
           <br>
           <div class="container">
             <div class="">
@@ -196,6 +196,14 @@
 
 <script type="text/javascript">
   $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @room.average_rating %>
+  })
+</script>
+
+<script type="text/javascript">
+  $('#average_rating_header').raty({
     path: '/assets',
     readOnly: true,
     score: <%= @room.average_rating %>
