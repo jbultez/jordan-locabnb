@@ -1,0 +1,27 @@
+<% if @reviews.count == 0%>
+  <div class="text-center">
+    <h4>Aucun commentaire</h4>
+  </div>
+<%else%>
+  <% @reviews.order("id DESC").each do |r|%>
+  <div class="row">
+    <div class="col-md-1">
+      <%= image_tag avatar_url(r.user), class:"img-circle avatar-medium" %>
+    </div>
+    <div class="col-md-11">
+      <div class="">
+        <span class="pull-right">
+          <%= link_to "Supprimer mon commentaire", [@room, r], method: :delete, data: {confirm: "Etes-vous sûr de vouloir supprimer votre commentaire ?"} if current_user && current_user == r.user%>
+        </span>
+        <strong><%= r.user.lastname %> <%= r.user.firstname%> <%= r.star %></strong>
+        <br>
+        <%= r.created_at.strftime("%d.%m.%y") %>
+      </div>
+      <div class="">
+        <%= r.comment %>
+      </div>
+    </div>
+  </div>
+    <hr>
+  <%end%>
+<%end%>
