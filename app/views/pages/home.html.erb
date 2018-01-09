@@ -1,8 +1,6 @@
 <div class="row">
-  <div class="col-md-8">
-    <div class="text-center">
-      <h1>Réservez des logements uniques et vivez votre destination comme un habitant.</h1>
-    </div>
+  <div class="col-md-12">
+      <h1 class="text-center">Réservez des logements uniques et vivez votre destination comme un habitant.</h1>
   </div>
 </div>
 
@@ -44,7 +42,7 @@
         </div>
         <div class="panel-body">
           <p class="home-link">
-            <b><%= link_to room.price, room_path(room)%> - <%= link_to room.room_type, room_path(room) %> - <%= link_to pluralize(room.bed_room, "lit"), room_path(room) %></b>
+            <b><%= link_to room.price, room_path(room)%> € - <%= link_to room.room_type, room_path(room) %> - <%= link_to pluralize(room.bed_room, "lit"), room_path(room) %></b>
             <br> <%= link_to room.listing_name, room_path(room) %>
           </p>
         </div>
