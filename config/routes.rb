@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :destroy]
   end
   resources :photos
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
   get '/preload' => 'reservations#preload'
   get '/preview' => 'reservations#preview'
   get 'your_trips' => 'reservations#your_trips', path: 'mes_voyages'
