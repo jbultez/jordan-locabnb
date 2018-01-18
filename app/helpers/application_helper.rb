@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def fullname(room)
-    return "#{@room.user.lastname.capitalize!} #{@room.user.firstname.capitalize!}"
+    return "#{@room.user.lastname.capitalize} #{@room.user.firstname.capitalize}"
   end
 
 end

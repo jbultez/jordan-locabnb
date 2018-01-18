@@ -14,7 +14,7 @@
                 <%= image_tag avatar_url(other), class:"img-circle avatar-medium"%>
               </div>
               <div class="col-md-2">
-                <%= "#{other.lastname.capitalize!} #{other.firstname.capitalize!}" %>
+                <%= "#{other.lastname.capitalize} #{other.firstname.capitalize}" %>
                 <%= timeago_tag conversation.messages.last.created_at, :lang=>:fr%>
               </div>
               <div class="col-md-8">
