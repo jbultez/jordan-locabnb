@@ -6,7 +6,7 @@
       </div>
       <div class="panel-body">
         <div class="container">
-          <% @conversattions.each do |conversation|%>
+          <% @conversations.each do |conversation|%>
             <%= other = conversation.sender == current_user ? conversation.recipient : conversation.sender %>
             <%= link_to conversation_messages_path(conversation)%>
             <div class="row conversation">
@@ -15,7 +15,7 @@
               </div>
               <div class="col-md-2">
                 <%= "#{other.lastname.capitalize!} #{other.firstname.capitalize!}" %>
-                <%= conversation.messages.last.created_at%>
+                <%= timeago_tag conversation.messages.last.created_at, :lang=>:fr%>
               </div>
               <div class="col-md-8">
                 <%= conversation.messages.last.content %>

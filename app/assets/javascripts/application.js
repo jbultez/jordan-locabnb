@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require toastr
 //= require_tree .
+//= require rails-timeago-all
 
 toastr.options = {
   "positionClass":"toast-bottom-right"
