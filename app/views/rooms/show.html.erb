@@ -171,10 +171,10 @@
           </div>
         </div>
       </div>
-      <%if @room.nearbys(10) != 0 %>
+
       <h3>A proximité...</h3>
       <div class="row">
-        <% @room.nearbys(10).limit(3).each do |room| %>
+        <% @room.nearbys(10).limit(4).each do |room| %>
         <div class="col-md-2">
           <div class="panel panel-default">
             <div class="panel-heading preview">
@@ -188,7 +188,7 @@
         </div>
         <%end%>
       </div>
-      <%end%>
+
       </div>
     </div>
   </div>
