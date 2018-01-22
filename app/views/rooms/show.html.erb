@@ -171,7 +171,7 @@
           </div>
         </div>
       </div>
-
+      <%if @room.nearbys != 0 %>
       <h3>A proximité...</h3>
       <div class="row">
         <% @room.nearbys(10).limit(3).each do |room| %>
@@ -188,7 +188,7 @@
         </div>
         <%end%>
       </div>
-
+      <%end%>
       </div>
     </div>
   </div>
