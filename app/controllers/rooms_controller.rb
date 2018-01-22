@@ -27,12 +27,10 @@ before_action :require_same_user, only: [:edit, :update]
   end
 
   def show
+    @reviews = @room.reviews
     @photos = @room.photos
     if user_signed_in?
       @booked = Reservation.where("room_id = ? AND user_id = ?", @room.id, current_user.id).present?
-    end
-    if current_user
-      @reviews = @room.reviews
       @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
     end
   end
