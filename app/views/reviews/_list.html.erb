@@ -6,14 +6,14 @@
   <% @reviews.order("id DESC").each do |r|%>
   <br>
   <div class="row">
-    <div class="col-md-1">
+    <div class="col-md-2">
       <%= image_tag avatar_url(r.user), class:"img-circle avatar-medium img img-responsive" %>
       <hr>
       <p class="text-center">
         <strong><%= r.user.lastname.capitalize %> <%= r.user.firstname.capitalize%></strong>
       </p>
     </div>
-    <div class="col-md-11">
+    <div class="col-md-10">
       <div id="stars_<%= r.id %>">Le <%= r.created_at.strftime("%d/%m/%y") %> </div>
       <br>
       <div class="">
