@@ -28,8 +28,8 @@ before_action :require_same_user, only: [:edit, :update]
 
   def show
     @photos = @room.photos
-    @booked = Reservation.where("room_id = ? AND user_id = ?", @room.id, current_user.id).present?
     if current_user
+      @booked = Reservation.where("room_id = ? AND user_id = ?", @room.id, current_user.id).present?
       @reviews = @room.reviews
       @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
     end
