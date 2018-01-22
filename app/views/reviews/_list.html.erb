@@ -20,7 +20,7 @@
         <%= r.comment %>
       </div>
       <span class="pull-right">
-        <%= link_to "Supprimer mon commentaire", [@room, r], method: :delete, data: {confirm: "Etes-vous sûr de vouloir supprimer votre commentaire ?"} if current_user && current_user == r.user%>
+        <%= link_to "Supprimer mon commentaire", [@room, r],class: "btn btn-primary", method: :delete, data: {confirm: "Etes-vous sûr de vouloir supprimer votre commentaire ?"} if current_user && current_user == r.user%>
       </span>
     </div>
   </div>
