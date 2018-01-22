@@ -1,16 +1,18 @@
 <div class="panel panel-default">
   <div class="panel-body">
-
+    <div class="container">
     <!-- première photo de l'annonce -->
     <div class="row">
       <div class="col-md-12">
         <%= image_tag @photos[0].image.url(), class:'img img-responsive' if @photos.length > 0 %>
       </div>
     </div>
+    </div>
+    <br>
     <br>
     <!-- informations principales -->
     <div class="row">
-      <div class="col-md-offset-1 col-md-8">
+      <div class="col-md-8">
         <div class="row">
           <div class="col-md-3 text-center">
             <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %>
@@ -20,7 +22,7 @@
           </div>
           <div class="col-md-9">
             <h4 class="text-center"><%= @room.listing_name %></h4>
-            <a href="#map", class="sidebar-link"><%= @room.address %></a> <a href="#average_rating", class="sidebar-link"><span id="average_rating_header"></span> <%= @reviews.count%></a>
+            <br>
             <div class="row text-center row-space-1">
               <div class="col-sm-3">
                 <i class="fa fa-home fa-2x"></i>
@@ -57,7 +59,7 @@
           <%= render 'reservations/form' %>
         </div>
       </div>
-    </div>
+
 
     <!-- Description -->
     <div class="row-space-3"></div>
@@ -68,6 +70,7 @@
       </div>
     </div>
 <br>
+<div class="row-space-2"></div>
     <div class="row">
       <div class="col-md-2">
         <p>Equipement :</p>
@@ -93,7 +96,7 @@
         </div>
       </div>
     </div>
-
+    <br>
     <!-- carousel -->
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
@@ -112,7 +115,7 @@
             <% if @photos %>
               <% @photos.each do |photo| %>
                 <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-                  <%= image_tag photo.image.url() %>
+                  <%= image_tag photo.image.url(), class:'img img-responsive' %>
                 </div>
               <% end %>
             <% end %>
@@ -188,8 +191,7 @@
         </div>
         <%end%>
       </div>
-
-      </div>
+    </div>
     </div>
   </div>
 </div>
