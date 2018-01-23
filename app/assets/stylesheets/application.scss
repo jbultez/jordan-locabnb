@@ -292,7 +292,17 @@ body {
   .conversation:hover, .conversation:focus {
     background-color: #F4F4F5;
   }
-  
+
   .img-responsive {
     margin: 0 auto;
+  }
+
+  #myCarousel img {
+  width: auto;
+  height: 425px;
+  max-height: 425px;
+  }
+
+  .padding-right-low {
+    padding-right: 2%;
   }

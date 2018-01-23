@@ -20,7 +20,7 @@
             <br>
             <%= fullname(@room.user)%>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-8">
             <h4 class="text-center"><%= @room.listing_name %></h4>
             <br>
             <div class="row text-center row-space-1">
@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <!-- formulaire de réservation -->
           <%= render 'reservations/form' %>
         </div>
@@ -174,8 +174,9 @@
           </div>
         </div>
       </div>
-
+      <br>
       <h3>A proximité...</h3>
+      <br>
       <div class="row">
         <% @room.nearbys(10).limit(4).each do |room| %>
         <div class="col-md-2">
