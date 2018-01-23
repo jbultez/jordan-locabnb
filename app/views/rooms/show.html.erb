@@ -29,30 +29,30 @@
           <div class="col-md-8">
             <br>
             <div class="row text-center row-space-1">
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-xs-6">
                 <i class="fa fa-home fa-2x"></i>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-xs-6">
                 <i class="fa fa-users fa-2x"></i>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-xs-6">
                 <i class="fa fa-bed fa-2x"></i>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-xs-6">
                 <i class="fa fa-bath fa-2x"></i>
               </div>
             </div>
             <div class="row text-center">
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-xs-6">
                 <%= @room.home_type %>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-xs-6">
                 <%= @room.accomodate %> <%= @room.accomodate > 1? "Voyageurs" : "Voyageur" %>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-xs-6">
                 <%= @room.bed_room %> <%= @room.bed_room > 1? "Lits" : "Lit" %>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-xs-6">
                 <%= @room.bath_room %> <%= @room.bath_room > 1? "Salles de bain" : "Salle de bain" %>
               </div>
             </div>
@@ -184,7 +184,7 @@
       <br>
       <div class="row">
         <% @room.nearbys(10).limit(4).each do |room| %>
-        <div class="col-md-2">
+        <div class="col-md-3">
           <div class="panel panel-default">
             <div class="panel-heading preview">
               <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
