@@ -36,6 +36,7 @@ gem 'geocoder'
 gem 'jquery-ui-rails'
 gem 'ransack'
 gem 'rails-timeago'
+gem 'figaro'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

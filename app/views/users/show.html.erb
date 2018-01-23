@@ -11,6 +11,11 @@
     <div class="panel panel-default">
       <div class="panel-heading text-center">Vérification</div>
       <div class="panel-body">
+        <% if @user.confirmed_at %>
+          Email confirmé
+        <%else%>
+          Email non confirmé
+        <%end%>
         <p>Email: <%= @user.email %></p>
         <p>Tél: <%= @user.phone_number %></p>
       </div>
