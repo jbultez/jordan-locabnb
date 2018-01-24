@@ -1,0 +1,5 @@
+<p>Bonjour <%="#{@user.firstname.capitalize}" "#{@user.lastname.capitalize}"%></p>
+
+<p>Votre logement (<%= @room.listing_name %>) a une nouvelle réservation du <%= @reservation.start_date.strftime('%d.%m.%y') %>
+
+au <%= @reservation.end_date.strftime('%d.%m.%y')%></p>
