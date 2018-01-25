@@ -28,7 +28,7 @@ toastr.options = {
       appId      : '{your-app-id}',
       cookie     : true,
       xfbml      : true,
-      version    : '{latest-api-version}'
+      version    : 'v2.11'
     });
 
     FB.AppEvents.logPageView();
