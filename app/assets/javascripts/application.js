@@ -30,9 +30,7 @@ toastr.options = {
       xfbml      : true,
       version    : 'v2.11'
     });
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
+    
     FB.AppEvents.logPageView();
 
   };
