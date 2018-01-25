@@ -11,7 +11,8 @@ class User < ApplicationRecord
   validates_attachment :avatar,
     content_type: { content_type: ["image/jpeg", "image/png","image/jpg"] }, default_url: "/images/default_image.png"
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 7.megabytes
-
+  validates :lastname, presence: true, length: {maximum: 25}
+  validates :firstname, presence: true, length: {maximum: 25}
 
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
@@ -19,6 +20,8 @@ class User < ApplicationRecord
       return user
     else
       where(provider: auth.provider, uid: auth.uid).first_or_create do |u|
+        u.firstname = auth.info.firstname
+        u.lastname = auth.info.lastname
         u.provider = auth.provider
         u.uid = auth.uid
         u.email = auth.info.email
