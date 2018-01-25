@@ -33,6 +33,9 @@ toastr.options = {
 
     FB.AppEvents.logPageView();
 
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
   };
 
   (function(d, s, id){
