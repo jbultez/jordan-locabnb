@@ -28,7 +28,7 @@ toastr.options = {
       appId      : '397863927327465',
       cookie     : true,
       xfbml      : true,
-      version    : 'v2.6'
+      version    : 'v2.11'
     });
 
     FB.AppEvents.logPageView();
