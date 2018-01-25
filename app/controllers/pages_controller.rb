@@ -3,6 +3,9 @@ class PagesController < ApplicationController
   def home
     @rooms = Room.limit(6)
   end
+  
+  def cgu
+  end
 
   def search
     if params[:search].present? && params[:search].strip != ""

@@ -4,7 +4,7 @@
     <br>
     <%= link_to "Connexion avec facebook", user_facebook_omniauth_authorize_path, class:'btn btn-primary-fb' %>
     <hr>
-    
+
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
         <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Adresse e-mail" %>
@@ -24,7 +24,7 @@
         <%= f.submit "Se connecter", class: "btn btn-primary" %>
         <br>
         <br>
-        <%= link_to "Mot de passe oublié ?", new_user_password_path %>
+        <%= link_to "Mot de passe oublié ?", new_user_password_path, class:'cgu-link' %>
       </div>
     <% end %>
   </div>
