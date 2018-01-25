@@ -4,10 +4,10 @@ Devise.setup do |config|
 
   case Rails.env
   when "development"
-    config.omniauth :facebook, '144344399585040', '78b522cbf2571a1f62f65037123ebd55', scope:"email", info_fields:'email,name'
+    config.omniauth :facebook, '144344399585040', '78b522cbf2571a1f62f65037123ebd55', scope:"email", info_fields:'email, first_name, last_name'
 
   when "production"
-    config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope:"email", info_fields:'email,name'
+    config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope:"email", info_fields:'email, first_name, last_name'
   end
 
   # The secret key used by Devise. Devise uses this key to generate
